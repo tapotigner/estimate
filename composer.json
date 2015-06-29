@@ -1,0 +1,16 @@
+{
+    "autoload": {
+        "psr-0": {"Estimate": "src/"}
+    },
+    "require-dev": {
+    },
+    "require": {
+        "mouf/mouf": "~2.0",
+        "mouf/database.tdbm": "~3.3",
+        "mouf/mvc.splash": "~5.1",
+        "twig/twig": "~1.0",
+        "mouf/html.renderer.twig-extensions": "~1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
