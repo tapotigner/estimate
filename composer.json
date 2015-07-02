@@ -6,10 +6,13 @@
     },
     "require": {
         "mouf/mouf": "~2.0",
-        "mouf/database.tdbm": "~3.3",
+        "mouf/database.tdbm": "3.2",
         "mouf/mvc.splash": "~5.1",
         "twig/twig": "~1.0",
-        "mouf/html.renderer.twig-extensions": "~1.0"
+        "mouf/html.renderer.twig-extensions": "~1.0",
+        "mouf/security.userservice": "~2.0",
+        "mouf/security.simplelogincontroller": "~3.0",
+        "mouf/security.userservice-splash": "~4.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

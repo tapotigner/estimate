@@ -40,7 +40,7 @@ $moufManager->getConfigManager()->setConstantsDefinitionArray(array (
   ),
   'SECRET' => 
   array (
-    'defaultValue' => 'J5lcbZHmR5VNrNwyZh6G',
+    'defaultValue' => 'rOfdTBA57IVeJp92axn0',
     'type' => 'string',
     'comment' => 'A random string. It should be different for any application deployed.',
   ),
@@ -53,11 +53,92 @@ $moufManager->getConfigManager()->setConstantsDefinitionArray(array (
 ));
 
 $moufManager->setAllVariables(array (
+  'tdbmDefaultSourceDirectory_tdbmService' => 'src/',
+  'tdbmDefaultDaoNamespace_tdbmService' => 'Estimate\\Dao',
+  'tdbmDefaultBeanNamespace_tdbmService' => 'Estimate\\Dao\\Bean',
+  'tdbmDefaultDaoFactoryName_tdbmService' => 'DaoFactory',
+  'tdbmDefaultDaoFactoryInstanceName_tdbmService' => 'daoFactory',
+  'tdbmDefaultKeepSupport_tdbmService' => 0,
+  'tdbmDefaultStoreInUtc_tdbmService' => 0,
+  'tdbmDefaultSourceDirectory' => 'src/',
+  'tdbmDefaultDaoNamespace' => 'Estimate\\Dao',
+  'tdbmDefaultBeanNamespace' => 'Estimate\\Dao\\Bean',
+  'tdbmDefaultDaoFactoryName' => 'DaoFactory',
+  'tdbmDefaultDaoFactoryInstanceName' => 'daoFactory',
+  'tdbmDefaultKeepSupport' => 0,
+  'tdbmDefaultStoreInUtc' => 0,
   'splashDefaultControllersNamespace' => 'Estimate\\Controllers\\',
   'splashDefaultViewsDirectory' => 'src/views/',
 ));
 
 $moufManager->addComponentInstances(array (
+  '__anonymous__356c_1224423965' => 
+  array (
+    'class' => 'Mouf\\Security\\Views\\SimpleLoginView',
+    'external' => false,
+    'anonymous' => true,
+    'weak' => true,
+  ),
+  '__anonymous__d62c_135813_1435868815206' => 
+  array (
+    'class' => 'Mouf\\Html\\HtmlElement\\HtmlFromFile',
+    'external' => false,
+    'weak' => true,
+    'anonymous' => true,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'src/views/errors/404.php',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'login',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => true,
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'fieldProperties' => 
+    array (
+      'relativeToRootPath' => 
+      array (
+        'value' => true,
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'fileName' => 
+      array (
+        'value' => 'src/views/errors/404.php',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'fieldBinds' => 
+    array (
+      'scope' => 'login',
+    ),
+  ),
   'apcCacheService' => 
   array (
     'class' => 'Mouf\\Utils\\Cache\\ApcCache',
@@ -104,6 +185,16 @@ $moufManager->addComponentInstances(array (
     'class' => 'Mouf\\Html\\HtmlElement\\HtmlBlock',
     'external' => false,
     'weak' => false,
+    'fieldProperties' => 
+    array (
+    ),
+    'fieldBinds' => 
+    array (
+      'children' => 
+      array (
+        0 => 'messageWidget',
+      ),
+    ),
   ),
   'block.left' => 
   array (
@@ -231,6 +322,16 @@ $moufManager->addComponentInstances(array (
         array (
         ),
       ),
+    ),
+  ),
+  'daoFactory' => 
+  array (
+    'class' => 'Estimate\\Dao\\DaoFactory',
+    'external' => false,
+    'setterBinds' => 
+    array (
+      'setQuestionsRangeDao' => 'questionsRangeDao',
+      'setUserDao' => 'userDao',
     ),
   ),
   'dbConnection' => 
@@ -443,6 +544,51 @@ $moufManager->addComponentInstances(array (
       ),
     ),
   ),
+  'gamesController' => 
+  array (
+    'class' => 'Estimate\\Controllers\\GamesController',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'bootstrapTemplate',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'block.content',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'daoFactory',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => 'twigEnvironment',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'httpErrorsController' => 
   array (
     'class' => 'Mouf\\Mvc\\Splash\\Controllers\\HttpErrorsController',
@@ -463,6 +609,34 @@ $moufManager->addComponentInstances(array (
         array (
         ),
       ),
+    ),
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'bootstrapTemplate',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'type' => 'string',
+        'value' => 'block.content',
+        'parametertype' => 'object',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'setterProperties' => 
+    array (
+    ),
+    'setterBinds' => 
+    array (
+      'setContentFor404' => '__anonymous__d62c_135813_1435868815206',
     ),
   ),
   'jQueryLibrary' => 
@@ -536,6 +710,55 @@ $moufManager->addComponentInstances(array (
     'setterBinds' => 
     array (
       'setRenderer' => 'defaultWebLibraryRenderer',
+    ),
+  ),
+  'login' => 
+  array (
+    'class' => 'Mouf\\Security\\Controllers\\SimpleLoginController',
+    'external' => false,
+    'weak' => false,
+    'fieldBinds' => 
+    array (
+      'template' => 'bootstrapTemplate',
+      'userService' => 'userService',
+      'simpleLoginView' => '__anonymous__356c_1224423965',
+      'messageService' => 'userMessageService',
+      'contentBlock' => 'block.content',
+    ),
+    'fieldProperties' => 
+    array (
+      'badCredentialsLabel' => 
+      array (
+        'value' => 'Sorry, your login or password seem to be incorrect',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'logoutRedirectUrl' => 
+      array (
+        'value' => 'login/',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'defaultRedirectUrl' => 
+      array (
+        'value' => 'login/',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'ifLoggedRedirectUrl' => 
+      array (
+        'value' => 'games',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
     ),
   ),
   'messageServiceLibrary' => 
@@ -697,6 +920,60 @@ $moufManager->addComponentInstances(array (
       ),
     ),
   ),
+  'packageRenderer_mouf/security.simplelogincontroller' => 
+  array (
+    'class' => 'Mouf\\Html\\Renderer\\FileBasedRenderer',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'vendor/mouf/security.simplelogincontroller/src/templates',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'rendererCacheService',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'package',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => 0,
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'value' => 'twigEnvironment',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'phpVarsCheckRouter' => 
   array (
     'class' => 'Mouf\\Mvc\\Splash\\Routers\\PhpVarsCheckRouter',
@@ -733,6 +1010,15 @@ $moufManager->addComponentInstances(array (
       ),
     ),
   ),
+  'questionsRangeDao' => 
+  array (
+    'class' => 'Estimate\\Dao\\QuestionsRangeDao',
+    'external' => false,
+    'setterBinds' => 
+    array (
+      'setTdbmService' => 'tdbmService',
+    ),
+  ),
   'rendererCacheService' => 
   array (
     'class' => 'Mouf\\Utils\\Cache\\InMemoryCache',
@@ -748,42 +1034,6 @@ $moufManager->addComponentInstances(array (
     'class' => 'Mouf\\Utils\\Common\\Validators\\RequiredValidator',
     'external' => false,
     'weak' => false,
-  ),
-  'rootController' => 
-  array (
-    'class' => 'Estimate\\Controllers\\RootController',
-    'external' => false,
-    'weak' => false,
-    'constructor' => 
-    array (
-      0 => 
-      array (
-        'value' => 'bootstrapTemplate',
-        'parametertype' => 'object',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-      1 => 
-      array (
-        'value' => 'block.content',
-        'parametertype' => 'object',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-      2 => 
-      array (
-        'value' => 'twigEnvironment',
-        'parametertype' => 'object',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-    ),
   ),
   'rootUrlInlineWebLibrary' => 
   array (
@@ -936,6 +1186,16 @@ $moufManager->addComponentInstances(array (
       'setLanguageDetection' => 'splashBrowserLanguageDetection',
     ),
   ),
+  'tdbmService' => 
+  array (
+    'class' => 'Mouf\\Database\\TDBM\\TDBMService',
+    'external' => false,
+    'setterBinds' => 
+    array (
+      'setConnection' => 'dbConnection',
+      'setCacheService' => 'noCacheService',
+    ),
+  ),
   'twigDebugExtension' => 
   array (
     'class' => 'Twig_Extension_Debug',
@@ -981,6 +1241,15 @@ $moufManager->addComponentInstances(array (
       ),
     ),
   ),
+  'userDao' => 
+  array (
+    'class' => 'Estimate\\Dao\\UserDao',
+    'external' => false,
+    'setterBinds' => 
+    array (
+      'setTdbmService' => 'tdbmService',
+    ),
+  ),
   'userMessageService' => 
   array (
     'class' => 'Mouf\\Html\\Widgets\\MessageService\\Service\\SessionMessageService',
@@ -989,6 +1258,41 @@ $moufManager->addComponentInstances(array (
     'fieldBinds' => 
     array (
       'sessionManager' => 'sessionManager',
+    ),
+  ),
+  'userService' => 
+  array (
+    'class' => 'Mouf\\Security\\UserService\\UserService',
+    'external' => false,
+    'weak' => false,
+    'fieldBinds' => 
+    array (
+      'log' => 'psr.errorLogLogger',
+      'sessionManager' => 'sessionManager',
+      'userDao' => 'userDao',
+      'authenticationListeners' => 
+      array (
+        0 => 'userDao',
+      ),
+    ),
+    'fieldProperties' => 
+    array (
+      'sessionPrefix' => 
+      array (
+        'value' => 'SECRET',
+        'type' => 'config',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'loginPageUrl' => 
+      array (
+        'value' => 'login/',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
     ),
   ),
   'validatorsBrowserLanguageDetection' => 
@@ -1138,6 +1442,13 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Estimate\Dao\DaoFactory
+	 */
+	 public static function getDaoFactory() {
+	 	return MoufManager::getMoufManager()->get('daoFactory');
+	 }
+
+	/**
 	 * @return Mouf\Database\DBConnection\MySqlConnection
 	 */
 	 public static function getDbConnection() {
@@ -1194,6 +1505,13 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Mouf\Mvc\Splash\Routers\ExceptionRouter
+	 */
+	 public static function getExceptionRouter() {
+	 	return MoufManager::getMoufManager()->get('exceptionRouter');
+	 }
+
+	/**
 	 * @return Mouf\Utils\Cache\FileCache
 	 */
 	 public static function getFileCacheService() {
@@ -1208,6 +1526,20 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Estimate\Controllers\GamesController
+	 */
+	 public static function getGamesController() {
+	 	return MoufManager::getMoufManager()->get('gamesController');
+	 }
+
+	/**
+	 * @return Mouf\Mvc\Splash\Controllers\HttpErrorsController
+	 */
+	 public static function getHttpErrorsController() {
+	 	return MoufManager::getMoufManager()->get('httpErrorsController');
+	 }
+
+	/**
 	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
 	 */
 	 public static function getJQueryLibrary() {
@@ -1219,6 +1551,13 @@ class Mouf {
 	 */
 	 public static function getJavascript_bootstrap() {
 	 	return MoufManager::getMoufManager()->get('javascript.bootstrap');
+	 }
+
+	/**
+	 * @return Mouf\Security\Controllers\SimpleLoginController
+	 */
+	 public static function getLogin() {
+	 	return MoufManager::getMoufManager()->get('login');
 	 }
 
 	/**
@@ -1250,6 +1589,13 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Mouf\Mvc\Splash\Routers\NotFoundRouter
+	 */
+	 public static function getNotFoundRouter() {
+	 	return MoufManager::getMoufManager()->get('notFoundRouter');
+	 }
+
+	/**
 	 * @return Mouf\Utils\Common\Validators\NumericValidator
 	 */
 	 public static function getNumericValidatorDecimals() {
@@ -1264,10 +1610,31 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Mouf\Html\Renderer\FileBasedRenderer
+	 */
+	 public static function getPackageRenderer_moufsecurity_simplelogincontroller() {
+	 	return MoufManager::getMoufManager()->get('packageRenderer_mouf/security.simplelogincontroller');
+	 }
+
+	/**
+	 * @return Mouf\Mvc\Splash\Routers\PhpVarsCheckRouter
+	 */
+	 public static function getPhpVarsCheckRouter() {
+	 	return MoufManager::getMoufManager()->get('phpVarsCheckRouter');
+	 }
+
+	/**
 	 * @return Mouf\Utils\Log\Psr\ErrorLogLogger
 	 */
 	 public static function getPsr_errorLogLogger() {
 	 	return MoufManager::getMoufManager()->get('psr.errorLogLogger');
+	 }
+
+	/**
+	 * @return Estimate\Dao\QuestionsRangeDao
+	 */
+	 public static function getQuestionsRangeDao() {
+	 	return MoufManager::getMoufManager()->get('questionsRangeDao');
 	 }
 
 	/**
@@ -1306,6 +1673,13 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Mouf\Mvc\Splash\Splash
+	 */
+	 public static function getSplash() {
+	 	return MoufManager::getMoufManager()->get('splash');
+	 }
+
+	/**
 	 * @return Mouf\Utils\I18n\Fine\Language\BrowserLanguageDetection
 	 */
 	 public static function getSplashBrowserLanguageDetection() {
@@ -1313,10 +1687,38 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Mouf\Utils\Cache\ApcCache
+	 */
+	 public static function getSplashCacheApc() {
+	 	return MoufManager::getMoufManager()->get('splashCacheApc');
+	 }
+
+	/**
+	 * @return Mouf\Utils\Cache\FileCache
+	 */
+	 public static function getSplashCacheFile() {
+	 	return MoufManager::getMoufManager()->get('splashCacheFile');
+	 }
+
+	/**
+	 * @return Mouf\Mvc\Splash\Routers\SplashDefaultRouter
+	 */
+	 public static function getSplashDefaultRouter() {
+	 	return MoufManager::getMoufManager()->get('splashDefaultRouter');
+	 }
+
+	/**
 	 * @return Mouf\Utils\I18n\Fine\Translate\FinePHPArrayTranslationService
 	 */
 	 public static function getSplashTranslateService() {
 	 	return MoufManager::getMoufManager()->get('splashTranslateService');
+	 }
+
+	/**
+	 * @return Mouf\Database\TDBM\TDBMService
+	 */
+	 public static function getTdbmService() {
+	 	return MoufManager::getMoufManager()->get('tdbmService');
 	 }
 
 	/**
@@ -1341,10 +1743,24 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Estimate\Dao\UserDao
+	 */
+	 public static function getUserDao() {
+	 	return MoufManager::getMoufManager()->get('userDao');
+	 }
+
+	/**
 	 * @return Mouf\Html\Widgets\MessageService\Service\SessionMessageService
 	 */
 	 public static function getUserMessageService() {
 	 	return MoufManager::getMoufManager()->get('userMessageService');
+	 }
+
+	/**
+	 * @return Mouf\Security\UserService\UserService
+	 */
+	 public static function getUserService() {
+	 	return MoufManager::getMoufManager()->get('userService');
 	 }
 
 	/**
@@ -1362,73 +1778,10 @@ class Mouf {
 	 }
 
 	/**
-	 * @return Mouf\Mvc\Splash\Splash
-	 */
-	 public static function getSplash() {
-	 	return MoufManager::getMoufManager()->get('splash');
-	 }
-
-	/**
 	 * @return Whoops\StackPhp\WhoopsMiddleWare
 	 */
 	 public static function getWhoopsMiddleware() {
 	 	return MoufManager::getMoufManager()->get('whoopsMiddleware');
-	 }
-
-	/**
-	 * @return Mouf\Mvc\Splash\Routers\ExceptionRouter
-	 */
-	 public static function getExceptionRouter() {
-	 	return MoufManager::getMoufManager()->get('exceptionRouter');
-	 }
-
-	/**
-	 * @return Mouf\Mvc\Splash\Routers\SplashDefaultRouter
-	 */
-	 public static function getSplashDefaultRouter() {
-	 	return MoufManager::getMoufManager()->get('splashDefaultRouter');
-	 }
-
-	/**
-	 * @return Mouf\Mvc\Splash\Routers\PhpVarsCheckRouter
-	 */
-	 public static function getPhpVarsCheckRouter() {
-	 	return MoufManager::getMoufManager()->get('phpVarsCheckRouter');
-	 }
-
-	/**
-	 * @return Mouf\Mvc\Splash\Routers\NotFoundRouter
-	 */
-	 public static function getNotFoundRouter() {
-	 	return MoufManager::getMoufManager()->get('notFoundRouter');
-	 }
-
-	/**
-	 * @return Mouf\Mvc\Splash\Controllers\HttpErrorsController
-	 */
-	 public static function getHttpErrorsController() {
-	 	return MoufManager::getMoufManager()->get('httpErrorsController');
-	 }
-
-	/**
-	 * @return Mouf\Utils\Cache\ApcCache
-	 */
-	 public static function getSplashCacheApc() {
-	 	return MoufManager::getMoufManager()->get('splashCacheApc');
-	 }
-
-	/**
-	 * @return Mouf\Utils\Cache\FileCache
-	 */
-	 public static function getSplashCacheFile() {
-	 	return MoufManager::getMoufManager()->get('splashCacheFile');
-	 }
-
-	/**
-	 * @return Estimate\Controllers\RootController
-	 */
-	 public static function getRootController() {
-	 	return MoufManager::getMoufManager()->get('rootController');
 	 }
 
 }

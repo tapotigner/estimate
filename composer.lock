@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "323c00ca730697b7738d51ad0fe146a5",
+    "hash": "bcc91bd96dcefea2a2b04b2516bb6cb2",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -202,16 +202,16 @@
         },
         {
             "name": "mouf/database.tdbm",
-            "version": "v3.3.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/database.tdbm.git",
-                "reference": "31ea9b8422850406c5556586f79b25551689cb9f"
+                "reference": "6231111fc367033002f1756ed75087db3177ef39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/database.tdbm/zipball/31ea9b8422850406c5556586f79b25551689cb9f",
-                "reference": "31ea9b8422850406c5556586f79b25551689cb9f",
+                "url": "https://api.github.com/repos/thecodingmachine/database.tdbm/zipball/6231111fc367033002f1756ed75087db3177ef39",
+                "reference": "6231111fc367033002f1756ed75087db3177ef39",
                 "shasum": ""
             },
             "require": {
@@ -221,13 +221,10 @@
                 "mouf/utils.cache.no-cache": ">=2.0-dev,<3.0",
                 "mouf/utils.common.conditioninterface": ">=2.0-dev,<3.0",
                 "mouf/utils.log.errorlog_logger": ">=2.0-dev,<3.0",
-                "php": ">=5.5.0"
+                "php": ">=5.4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": ">3.7"
-            },
-            "suggest": {
-                "ext/weakref": "Allows efficient memory management. Useful for batches."
             },
             "type": "mouf-library",
             "extra": {
@@ -255,10 +252,6 @@
                         {
                             "title": "Advanced filtering",
                             "url": "doc/advanced.md"
-                        },
-                        {
-                            "title": "Memory management and batches processing",
-                            "url": "doc/memory_management.md"
                         }
                     ]
                 }
@@ -289,7 +282,7 @@
                 "orm",
                 "persistance"
             ],
-            "time": "2015-06-22 11:57:20"
+            "time": "2014-10-08 17:17:11"
         },
         {
             "name": "mouf/html.htmlelement",
@@ -1340,6 +1333,192 @@
                 "splash-common"
             ],
             "time": "2015-05-27 19:57:40"
+        },
+        {
+            "name": "mouf/security.simplelogincontroller",
+            "version": "3.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thecodingmachine/security.simplelogincontroller.git",
+                "reference": "a9aa21590cc185ecfacd6ff6f3bc9b4a66173beb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thecodingmachine/security.simplelogincontroller/zipball/a9aa21590cc185ecfacd6ff6f3bc9b4a66173beb",
+                "reference": "a9aa21590cc185ecfacd6ff6f3bc9b4a66173beb",
+                "shasum": ""
+            },
+            "require": {
+                "mouf/html.widgets.messageservice": "~3.0",
+                "mouf/security.userservice": "2.*",
+                "mouf/utils.action.action-interface": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "mouf-library",
+            "extra": {
+                "mouf": {
+                    "install": [
+                        {
+                            "type": "class",
+                            "class": "Mouf\\Security\\SimpleLoginInstaller"
+                        }
+                    ],
+                    "doc": [
+                        {
+                            "title": "Intergrate the UserService.RememberMe feature",
+                            "url": "doc/integrate_remember_me.md"
+                        }
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mouf": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Négrier",
+                    "email": "d.negrier@thecodingmachine.com",
+                    "homepage": "http://mouf-php.com"
+                }
+            ],
+            "description": "This package contains a simple Splash controller to log into an application. The controller can display a simple form with username/password choice, and has actions to login/logout the application.",
+            "homepage": "https://github.com/thecodingmachine/security.simplelogincontroller",
+            "keywords": [
+                "login",
+                "mouf",
+                "security"
+            ],
+            "time": "2015-05-20 11:45:04"
+        },
+        {
+            "name": "mouf/security.userservice",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thecodingmachine/security.userservice.git",
+                "reference": "ac2739f414689349ea008f9c173723bb832c8861"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thecodingmachine/security.userservice/zipball/ac2739f414689349ea008f9c173723bb832c8861",
+                "reference": "ac2739f414689349ea008f9c173723bb832c8861",
+                "shasum": ""
+            },
+            "require": {
+                "mouf/mouf-validators-interface": "~2.0",
+                "mouf/utils.common.conditioninterface": "2.*",
+                "mouf/utils.constants.secret": "~1.0",
+                "mouf/utils.log.psr.errorlog_logger": "2.*",
+                "mouf/utils.session.session-manager": "~2.1",
+                "mouf/utils.value.value-interface": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "mouf-library",
+            "extra": {
+                "mouf": {
+                    "install": [
+                        {
+                            "file": "src/install.php",
+                            "type": "file"
+                        }
+                    ],
+                    "doc": [
+                        {
+                            "title": "Installation",
+                            "url": "doc/usersserviceInstallation.md"
+                        },
+                        {
+                            "title": "Configure the project",
+                            "url": "doc/userServiceInterfaces.md"
+                        },
+                        {
+                            "title": "Configure UserService Instance",
+                            "url": "doc/configure_user_service.md"
+                        },
+                        {
+                            "title": "UserService - Quick Example",
+                            "url": "doc/userservicesample.md"
+                        }
+                    ],
+                    "logo": "logo.png"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mouf\\Security\\UserService": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Négrier",
+                    "email": "d.negrier@thecodingmachine.com",
+                    "homepage": "http://mouf-php.com"
+                }
+            ],
+            "description": "A set of PHP class to manage log-in and log-out of web applications and that integrates with Mouf.",
+            "homepage": "https://github.com/thecodingmachine/security.userservice",
+            "keywords": [
+                "User management",
+                "security",
+                "user"
+            ],
+            "time": "2014-06-04 16:08:19"
+        },
+        {
+            "name": "mouf/security.userservice-splash",
+            "version": "4.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thecodingmachine/security.userservice-splash.git",
+                "reference": "ad5d774760de207f4350f04e49ffc42cfd00d91a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thecodingmachine/security.userservice-splash/zipball/ad5d774760de207f4350f04e49ffc42cfd00d91a",
+                "reference": "ad5d774760de207f4350f04e49ffc42cfd00d91a",
+                "shasum": ""
+            },
+            "require": {
+                "mouf/mvc.splash-common": ">=4.0,< 6.0 | 7.*",
+                "mouf/security.userservice": "2.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mouf": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Négrier",
+                    "email": "d.negrier@thecodingmachine.com",
+                    "homepage": "http://mouf-php.com"
+                }
+            ],
+            "description": "This package contains a set of class to bind the Splash MVC framework (>=v4.0) with the UserService component. It features: a @Logged annotation to restrict access to logged users only.",
+            "homepage": "https://github.com/thecodingmachine/security.userservice-splash",
+            "keywords": [
+                "mouf",
+                "security",
+                "splash",
+                "user"
+            ],
+            "time": "2015-06-26 15:10:28"
         },
         {
             "name": "mouf/utils.action.action-interface",

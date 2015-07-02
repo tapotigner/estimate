@@ -159,4 +159,18 @@ return array (
     'url' => 'splashinstall/writeHtAccess',
     'package' => 'mouf/mvc.splash',
   ),
+  22 => 
+  array (
+    'status' => 'done',
+    'type' => 'file',
+    'file' => 'src/install.php',
+    'package' => 'mouf/security.userservice',
+  ),
+  23 => 
+  array (
+    'status' => 'done',
+    'type' => 'class',
+    'class' => 'Mouf\\Security\\SimpleLoginInstaller',
+    'package' => 'mouf/security.simplelogincontroller',
+  ),
 );
