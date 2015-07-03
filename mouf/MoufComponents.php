@@ -443,7 +443,11 @@ $moufManager->addComponentInstances(array (
         1 => 'jQueryLibrary',
         2 => 'javascript.bootstrap',
         3 => 'messageServiceLibrary',
+        4 => 'myWebLibrary',
       ),
+    ),
+    'setterProperties' => 
+    array (
     ),
   ),
   'defaultWebLibraryRenderer' => 
@@ -642,6 +646,51 @@ $moufManager->addComponentInstances(array (
       'setContentFor404' => '__anonymous__d62c_135813_1435868815206',
     ),
   ),
+  'inscriptionController' => 
+  array (
+    'class' => 'Estimate\\Controllers\\InscriptionController',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'bootstrapTemplate',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'block.content',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'daoFactory',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => 'twigEnvironment',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'jQueryLibrary' => 
   array (
     'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
@@ -822,6 +871,39 @@ $moufManager->addComponentInstances(array (
         'value' => 'return $container;',
         'parametertype' => 'primitive',
         'type' => 'php',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'myWebLibrary' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 
+        array (
+          0 => 'src/public/js/main.js',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 
+        array (
+          0 => 'src/public/css/main.css',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
         'metadata' => 
         array (
         ),
@@ -1543,6 +1625,13 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Estimate\Controllers\InscriptionController
+	 */
+	 public static function getInscriptionController() {
+	 	return MoufManager::getMoufManager()->get('inscriptionController');
+	 }
+
+	/**
 	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
 	 */
 	 public static function getJQueryLibrary() {
@@ -1582,6 +1671,13 @@ class Mouf {
 	 */
 	 public static function getMoufTwigExtension() {
 	 	return MoufManager::getMoufManager()->get('moufTwigExtension');
+	 }
+
+	/**
+	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
+	 */
+	 public static function getMyWebLibrary() {
+	 	return MoufManager::getMoufManager()->get('myWebLibrary');
 	 }
 
 	/**

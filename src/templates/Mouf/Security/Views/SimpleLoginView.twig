@@ -8,7 +8,6 @@
         <div class="form-group">
             <div>
                 <input id="login" name="login" type="text" placeholder="E-mail" class="form-control input-md" required="" autofocus />
-
             </div>
         </div>
 
@@ -20,11 +19,16 @@
             </div>
         </div>
 
-        <!-- Button -->
-        <div class="form-group text-center">
+        <!-- Button login -->
+        <div class="form-group">
             <div>
-                <button id="singlebutton" name="singlebutton" class="btn btn-blue">Se connecter</button>
+                <button id="singlebutton" name="singlebutton" class="btn btn-success">Se connecter</button>
             </div>
+        </div>
+
+        <!-- Button inscription -->
+        <div class="form-group">
+            <a id="inscription" name="inscription" class="btn btn-info" href="{{ constant("ROOT_URL") }}inscription">Inscription</a>
         </div>
 
     </fieldset>
