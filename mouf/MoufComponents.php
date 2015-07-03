@@ -266,8 +266,11 @@ $moufManager->addComponentInstances(array (
       'setHeader' => 'block.header',
       'setFooter' => 'block.footer',
       'setWebLibraryManager' => 'defaultWebLibraryManager',
-      'setTemplateRenderer' => 'bootstrapRenderer',
       'setDefaultRenderer' => 'defaultRenderer',
+      'setTemplateRenderer' => 'bootstrapRenderer',
+    ),
+    'setterProperties' => 
+    array (
     ),
   ),
   'customRenderer' => 
@@ -596,8 +599,8 @@ $moufManager->addComponentInstances(array (
     'weak' => false,
     'fieldBinds' => 
     array (
-      'template' => 'bootstrapTemplate',
       'contentBlock' => 'block.content',
+      'template' => 'bootstrapTemplate',
     ),
     'fieldProperties' => 
     array (
