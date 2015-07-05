@@ -192,7 +192,8 @@ $moufManager->addComponentInstances(array (
     array (
       'children' => 
       array (
-        0 => 'messageWidget',
+        0 => 'estimateMenu',
+        1 => 'messageWidget',
       ),
     ),
   ),
@@ -266,11 +267,76 @@ $moufManager->addComponentInstances(array (
       'setHeader' => 'block.header',
       'setFooter' => 'block.footer',
       'setWebLibraryManager' => 'defaultWebLibraryManager',
-      'setDefaultRenderer' => 'defaultRenderer',
       'setTemplateRenderer' => 'bootstrapRenderer',
+      'setDefaultRenderer' => 'defaultRenderer',
     ),
     'setterProperties' => 
     array (
+    ),
+  ),
+  'component.bootstrap' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 
+        array (
+          0 => 'components/bootstrap/js/bootstrap.js',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 
+        array (
+          0 => 'components/bootstrap/css/bootstrap.min.css',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'component.jquery' => 
+  array (
+    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 
+        array (
+          0 => 'components/jquery/jquery.js',
+        ),
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 
+        array (
+        ),
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
     ),
   ),
   'customRenderer' => 
@@ -441,19 +507,27 @@ $moufManager->addComponentInstances(array (
       array (
         0 => 'rootUrlInlineWebLibrary',
         1 => 'jQueryLibrary',
-        2 => 'javascript.bootstrap',
         3 => 'messageServiceLibrary',
         4 => 'myWebLibrary',
+        5 => 'component.jquery',
+        6 => 'component.bootstrap',
       ),
     ),
     'setterProperties' => 
     array (
     ),
-  ),
-  'defaultWebLibraryRenderer' => 
-  array (
-    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\DefaultWebLibraryRenderer',
-    'external' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'defaultRenderer',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
   ),
   'emailValidator' => 
   array (
@@ -476,6 +550,65 @@ $moufManager->addComponentInstances(array (
         array (
         ),
       ),
+    ),
+  ),
+  'estimateMenu' => 
+  array (
+    'class' => 'Mouf\\Html\\HtmlElement\\HtmlFromFile',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'src/views/menu/index.php',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'login',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => true,
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'fieldProperties' => 
+    array (
+      'relativeToRootPath' => 
+      array (
+        'value' => true,
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      'fileName' => 
+      array (
+        'value' => 'src/views/menu/index.php',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+    'fieldBinds' => 
+    array (
+      'scope' => 'login',
     ),
   ),
   'exceptionRouter' => 
@@ -724,44 +857,6 @@ $moufManager->addComponentInstances(array (
     ),
     'setterBinds' => 
     array (
-      'setRenderer' => 'defaultWebLibraryRenderer',
-    ),
-  ),
-  'javascript.bootstrap' => 
-  array (
-    'class' => 'Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary',
-    'external' => false,
-    'weak' => false,
-    'constructor' => 
-    array (
-      0 => 
-      array (
-        'value' => 
-        array (
-          0 => 'vendor/mouf/html.utils.bootstrap/js/bootstrap.min.js',
-        ),
-        'parametertype' => 'primitive',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-      1 => 
-      array (
-        'value' => 
-        array (
-          0 => 'vendor/mouf/html.utils.bootstrap/css/bootstrap.min.css',
-        ),
-        'parametertype' => 'primitive',
-        'type' => 'string',
-        'metadata' => 
-        array (
-        ),
-      ),
-    ),
-    'setterBinds' => 
-    array (
-      'setRenderer' => 'defaultWebLibraryRenderer',
     ),
   ),
   'login' => 
@@ -846,7 +941,6 @@ $moufManager->addComponentInstances(array (
     ),
     'setterBinds' => 
     array (
-      'setRenderer' => 'defaultWebLibraryRenderer',
     ),
   ),
   'messageWidget' => 
@@ -944,6 +1038,114 @@ $moufManager->addComponentInstances(array (
       'allowDecimals' => 
       array (
         'value' => true,
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'packageRenderer_mouf/html.utils.weblibrarymanager' => 
+  array (
+    'class' => 'Mouf\\Html\\Renderer\\FileBasedRenderer',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'vendor/mouf/html.utils.weblibrarymanager/src/templates',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'rendererCacheService',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'package',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => 0,
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'value' => 'twigEnvironment',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'packageRenderer_mouf/html.widgets.menu' => 
+  array (
+    'class' => 'Mouf\\Html\\Renderer\\FileBasedRenderer',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'vendor/mouf/html.widgets.menu/src/templates',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'rendererCacheService',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'package',
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => 0,
+        'parametertype' => 'primitive',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'value' => 'twigEnvironment',
+        'parametertype' => 'object',
         'type' => 'string',
         'metadata' => 
         array (
@@ -1127,7 +1329,6 @@ $moufManager->addComponentInstances(array (
     'weak' => false,
     'fieldBinds' => 
     array (
-      'jsElement' => 'rootUrlJsFile',
     ),
   ),
   'rootUrlJsFile' => 
@@ -1520,6 +1721,20 @@ class Mouf {
 	 }
 
 	/**
+	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
+	 */
+	 public static function getComponent_bootstrap() {
+	 	return MoufManager::getMoufManager()->get('component.bootstrap');
+	 }
+
+	/**
+	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
+	 */
+	 public static function getComponent_jquery() {
+	 	return MoufManager::getMoufManager()->get('component.jquery');
+	 }
+
+	/**
 	 * @return Mouf\Html\Renderer\FileBasedRenderer
 	 */
 	 public static function getCustomRenderer() {
@@ -1569,13 +1784,6 @@ class Mouf {
 	 }
 
 	/**
-	 * @return Mouf\Html\Utils\WebLibraryManager\DefaultWebLibraryRenderer
-	 */
-	 public static function getDefaultWebLibraryRenderer() {
-	 	return MoufManager::getMoufManager()->get('defaultWebLibraryRenderer');
-	 }
-
-	/**
 	 * @return Mouf\Utils\Common\Validators\EmailValidator
 	 */
 	 public static function getEmailValidator() {
@@ -1587,6 +1795,13 @@ class Mouf {
 	 */
 	 public static function getErrorLogLogger() {
 	 	return MoufManager::getMoufManager()->get('errorLogLogger');
+	 }
+
+	/**
+	 * @return Mouf\Html\HtmlElement\HtmlFromFile
+	 */
+	 public static function getEstimateMenu() {
+	 	return MoufManager::getMoufManager()->get('estimateMenu');
 	 }
 
 	/**
@@ -1636,13 +1851,6 @@ class Mouf {
 	 */
 	 public static function getJQueryLibrary() {
 	 	return MoufManager::getMoufManager()->get('jQueryLibrary');
-	 }
-
-	/**
-	 * @return Mouf\Html\Utils\WebLibraryManager\WebLibrary
-	 */
-	 public static function getJavascript_bootstrap() {
-	 	return MoufManager::getMoufManager()->get('javascript.bootstrap');
 	 }
 
 	/**
@@ -1699,6 +1907,20 @@ class Mouf {
 	 */
 	 public static function getNumericValidatorDecimals() {
 	 	return MoufManager::getMoufManager()->get('numericValidatorDecimals');
+	 }
+
+	/**
+	 * @return Mouf\Html\Renderer\FileBasedRenderer
+	 */
+	 public static function getPackageRenderer_moufhtml_utils_weblibrarymanager() {
+	 	return MoufManager::getMoufManager()->get('packageRenderer_mouf/html.utils.weblibrarymanager');
+	 }
+
+	/**
+	 * @return Mouf\Html\Renderer\FileBasedRenderer
+	 */
+	 public static function getPackageRenderer_moufhtml_widgets_menu() {
+	 	return MoufManager::getMoufManager()->get('packageRenderer_mouf/html.widgets.menu');
 	 }
 
 	/**

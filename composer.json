@@ -12,7 +12,8 @@
         "mouf/html.renderer.twig-extensions": "~1.0",
         "mouf/security.userservice": "~2.0",
         "mouf/security.simplelogincontroller": "~3.0",
-        "mouf/security.userservice-splash": "~4.0"
+        "mouf/security.userservice-splash": "~4.0",
+        "mouf/html.utils.bootstrap": "~3.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

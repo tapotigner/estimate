@@ -1,0 +1,43 @@
+body {
+    background-image: url("../images/escheresque_ste_@2X.png");
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.my-center {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+
+.my-block {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.row {
+    margin-top: 24px;
+}
+
+.logo-container {
+    position: fixed;
+    background-color: currentColor;
+    padding-right: 15px;
+    border-bottom-right-radius: 5px;
+    border-right: 1px solid mintcream;
+    border-bottom: 1px solid mintcream;
+}
+
+.logo-title {
+    display: inline-block;
+    vertical-align: middle;
+    color: mintcream;
+    font-family: fantasy;
+}
+
+.fantasy-text {
+    font-family: fantasy;
+}

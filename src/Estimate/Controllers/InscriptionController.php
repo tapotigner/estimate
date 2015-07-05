@@ -9,14 +9,11 @@ use Mouf\Mvc\Splash\Controllers\Controller;
 
 class InscriptionController extends Controller {
 
-
     /**
      * The template used by this controller.
      * @var TemplateInterface
      */
     private $template;
-
-
 
     /**
      * The main content block of the page.

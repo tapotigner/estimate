@@ -1,35 +1,23 @@
-<form id="loginForm" class="form-horizontal col-md-4 col-md-offset-4" role="form" action="login" method="post">
-    <fieldset>
-
-        <!-- Form Name -->
-        <legend>Connexion Estimate</legend>
-
-        <!-- Text input-->
-        <div class="form-group">
-            <div>
-                <input id="login" name="login" type="text" placeholder="E-mail" class="form-control input-md" required="" autofocus />
-            </div>
-        </div>
-
-        <!-- Password input-->
-        <div class="form-group">
-            <div>
-                <input id="password" name="password" type="password" placeholder="Mot de passe" class="form-control input-md">
-
-            </div>
-        </div>
-
-        <!-- Button login -->
-        <div class="form-group">
-            <div>
-                <button id="singlebutton" name="singlebutton" class="btn btn-success">Se connecter</button>
-            </div>
-        </div>
-
-        <!-- Button inscription -->
-        <div class="form-group">
-            <a id="inscription" name="inscription" class="btn btn-info" href="{{ constant("ROOT_URL") }}inscription">Inscription</a>
-        </div>
-
-    </fieldset>
-</form>
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 my-block">
+        <form id="loginForm" class="my-center form-horizontal" role="form" action="login" method="post">
+            <fieldset>
+            {#<h1 class="fantasy-text">Estimate</h1>#}
+            {#<hr>#}
+            <p><input id="login" name="login" type="text" placeholder="E-mail" class="form-control input-md" required autofocus /></p>
+            <p><input id="password" name="password" type="password" placeholder="Mot de passe" class="form-control input-md"></p>
+            <p><button id="singlebutton" name="singlebutton" class="btn btn-success">Se connecter</button></p>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 my-block my-center">
+        <p>Vous êtes nouveau ? Pour s'inscrire c'est par ici !</p>
+        <a id="inscription" name="inscription" class="btn btn-info" href="{{ constant("ROOT_URL") }}inscription">Inscription</a>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
