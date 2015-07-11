@@ -22,8 +22,16 @@ h1 {
     margin-top: 24px;
 }
 
-.logo-container {
+/**********/
+/** MENU **/
+/**********/
+.menu-container {
     position: fixed;
+    width: 100%;
+}
+
+.logo-container {
+    display: inline-block;
     background-color: currentColor;
     padding-right: 15px;
     border-bottom-right-radius: 5px;
@@ -39,5 +47,26 @@ h1 {
 }
 
 .fantasy-text {
+    font-family: fantasy;
+}
+
+.user-container {
+    right: 0;
+    top: 0;
+    position: absolute;
+    margin-right: 30px;
+    background-color: currentColor;
+    padding: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 1px solid mintcream;
+    border-left: 1px solid mintcream;
+    border-bottom: 1px solid mintcream;
+}
+
+.user-container-text {
+    display: inline-block;
+    vertical-align: middle;
+    color: mintcream;
     font-family: fantasy;
 }

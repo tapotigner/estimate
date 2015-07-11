@@ -552,6 +552,51 @@ $moufManager->addComponentInstances(array (
       ),
     ),
   ),
+  'estimateController' => 
+  array (
+    'class' => 'Estimate\\Controllers\\EstimateController',
+    'external' => false,
+    'weak' => false,
+    'constructor' => 
+    array (
+      0 => 
+      array (
+        'value' => 'bootstrapTemplate',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        'value' => 'block.content',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'value' => 'daoFactory',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'value' => 'twigEnvironment',
+        'parametertype' => 'object',
+        'type' => 'string',
+        'metadata' => 
+        array (
+        ),
+      ),
+    ),
+  ),
   'estimateMenu' => 
   array (
     'class' => 'Mouf\\Html\\HtmlElement\\HtmlFromFile',
@@ -1795,6 +1840,13 @@ class Mouf {
 	 */
 	 public static function getErrorLogLogger() {
 	 	return MoufManager::getMoufManager()->get('errorLogLogger');
+	 }
+
+	/**
+	 * @return Estimate\Controllers\EstimateController
+	 */
+	 public static function getEstimateController() {
+	 	return MoufManager::getMoufManager()->get('estimateController');
 	 }
 
 	/**
