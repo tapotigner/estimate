@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 my-block my-center">
+        <form id="inscriptionForm" class="form-horizontal" role="form" action="inscription/inscription" method="post">
+            <fieldset>
+                <h1 class="fantasy-text">Inscription Estimate</h1>
+                <hr>
+                <p><input id="login" name="login" type="text" placeholder="E-mail" class="form-control" autofocus required/></p>
+                <p><input id="password" name="password" type="password" placeholder="Mot de passe" class="form-control" required></p>
+                <p><input id="confirm-password" type="password" placeholder="Confirmer le mot de passe" class="form-control" required></p>
+                <p><button id="singlebutton" name="singlebutton" class="btn btn-success">S'inscrire</button></p>
+                <a href="{{ constant("ROOT_URL") }}">Retour</a>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
